@@ -8,6 +8,8 @@ import { connectDB } from "./lib/db.js";
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+app.use(express.json()); //parses json
+
 // Middleware
 app.use("/api/auth", authRouter);
 
