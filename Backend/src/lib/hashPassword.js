@@ -5,3 +5,8 @@ export const hashPassword = async (candidatePassword) => {
   const hashedPassword = await bcrypt.hash(candidatePassword, salt);
   return hashedPassword; // return the hashed password
 };
+
+
+export const comparePassword = async (passwordByUser, passwordBySystem) => {
+  return await bcrypt.compare(passwordByUser, passwordBySystem);
+};
