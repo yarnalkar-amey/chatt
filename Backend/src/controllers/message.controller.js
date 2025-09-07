@@ -40,8 +40,6 @@ export const getMessages = async (req, res, next) => {
   }
 };
 
-import cloudinary from "../lib/cloudinary.js";
-import MessageModel from "../models/Message.model.js";
 
 export const sendMessage = async (req, res) => {
   try {

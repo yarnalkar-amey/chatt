@@ -7,13 +7,17 @@ import { connectDB } from "./lib/db.js";
 import cookieParser from "cookie-parser";
 import updatePicRouter from "./routes/updatePic.route.js";
 import messageRouter from "./routes/message.route.js";
-
+import cors from "cors";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json()); //parses json
 app.use(cookieParser())
+app.use(cors({
+   origin: "http://localhost:5173", // your frontend URL
+  credentials: true
+}))
 
 // Middleware
 app.use("/api/auth", authRouter);
